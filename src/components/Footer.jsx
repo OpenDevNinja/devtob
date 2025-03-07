@@ -1,6 +1,6 @@
 // src/components/Footer.jsx
 import { ChevronUpIcon } from 'lucide-react';
-
+import logo from "../assets/DevToB.svg"
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -14,8 +14,20 @@ const Footer = () => {
       <div className="container px-4 mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <span className="font-mono text-primary text-xl font-bold">&lt;DevTob<span className="text-accent">/</span>&gt;</span>
-            <p className="text-light/60 mt-2 text-sm">
+            
+            <div className="flex-shrink-0 flex items-center">
+                        {/* Logo image remplaçant le texte */}
+                        <img 
+                          src={logo}
+                          alt="Logo" 
+                          className="h-10 w-auto"
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = "/api/placeholder/120/40";
+                          }}
+                        />
+                      </div>
+             <p className="text-light/60 mt-2 text-sm">
               Créateur d'expériences web et mobiles
             </p>
           </div>

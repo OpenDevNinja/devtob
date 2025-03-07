@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { SunIcon, MoonIcon, MenuIcon, XIcon,QrCode, InfoIcon } from 'lucide-react';
-
+import logo from "../assets/DevToB.svg"
 const Navbar = ({ darkMode, setDarkMode, isScrolled }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
@@ -40,10 +40,18 @@ const Navbar = ({ darkMode, setDarkMode, isScrolled }) => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0 flex items-center">
-            <span className="font-mono text-primary text-xl font-bold">&lt;DevToB<span className="text-accent">/</span>&gt;</span>
+        <div className="flex-shrink-0 flex items-center">
+            {/* Logo image remplaçant le texte */}
+            <img 
+              src={logo}
+              alt="Logo" 
+              className="h-10 w-auto"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "/api/placeholder/120/40";
+              }}
+            />
           </div>
-          
           {/* Desktop menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
