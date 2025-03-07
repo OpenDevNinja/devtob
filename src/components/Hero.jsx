@@ -113,7 +113,7 @@ const Hero = () => {
             </a>
           </div>
           
-          <div className="flex justify-center space-x-6 mb-8">
+          <div className="flex justify-center space-x-6 mb-12">
             {[
               { icon: GithubIcon, url: "#", label: "GitHub" },
               { icon: LinkedinIcon, url: "#", label: "LinkedIn" },
@@ -125,7 +125,7 @@ const Hero = () => {
                 aria-label={social.label} 
                 target="_blank" 
                 rel="noreferrer" 
-                className="p-3 rounded-full border border-light/20 hover:border-primary hover:text-primary transition-all duration-300 transform hover:-translate-y-1 hover:shadow-custom"
+                className="p-3  rounded-full border border-light/20 hover:border-primary hover:text-primary transition-all duration-300 transform hover:-translate-y-1 hover:shadow-custom"
               >
                 <social.icon className="h-5 w-5" />
               </a>
@@ -136,10 +136,10 @@ const Hero = () => {
       
       <a 
         href="#services" 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-light/60 hover:text-primary transition-colors duration-300 group"
+        className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-light/60 hover:text-primary transition-colors duration-300 group"
       >
         <span className="text-sm mb-1 group-hover:opacity-100 opacity-70">Découvrir mes services</span>
-        <ArrowDownIcon className="h-5 w-5 animate-bounce" />
+        <ArrowDownIcon className="h-5 w-5 mt-2 animate-bounce" />
       </a>
     </section>
   );
