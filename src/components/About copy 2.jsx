@@ -69,20 +69,20 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image sans rotation et avec hauteur ajustée */}
-          <div className={`relative h-full flex items-center order-2 lg:order-1 ${isVisible ? 'animate-slide-in-left' : 'opacity-0 -translate-x-12'}`}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
+          {/* Image parfaitement droite et à la même hauteur */}
+          <div className={`relative order-2 lg:order-1 flex items-center ${isVisible ? 'animate-slide-in-left' : 'opacity-0 -translate-x-12'}`}
                style={{ transition: 'all 0.8s ease-out' }}>
             <div className="absolute -top-8 -left-8 w-72 h-72 rounded-full bg-primary opacity-10 filter blur-3xl animate-pulse"></div>
             
-            {/* Image container - suppression des effets de rotation */}
-            <div className="group relative w-full h-full overflow-hidden rounded-2xl border-4 border-primary/20 shadow-lg shadow-primary/5">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700"></div>
-              <img 
-                src={bona} 
-                alt="Bonaventure TOYI, Développeur Web & Mobile" 
-                className="w-full h-full object-cover object-center filter saturate-50 hover:saturate-100 transition-all duration-700"
-              />
+            <div className="w-full h-full flex items-center justify-center">
+              <div className="relative overflow-hidden rounded-2xl border-4 border-primary/20 shadow-lg shadow-primary/5 w-full h-auto">
+                <img 
+                  src={bona} 
+                  alt="Bonaventure TOYI, Développeur Web & Mobile" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             
             <div className="absolute -bottom-8 -right-8 w-72 h-72 rounded-full bg-secondary opacity-10 filter blur-3xl animate-pulse"></div>
@@ -91,7 +91,7 @@ const About = () => {
           {/* Contenu textuel */}
           <div className={`order-1 lg:order-2 ${isVisible ? 'animate-slide-in-right' : 'opacity-0 translate-x-12'}`}
                style={{ transition: 'all 0.8s ease-out', transitionDelay: '0.2s' }}>
-            <div className="space-y-6">
+            <div className="space-y-6 h-full flex flex-col justify-center">
               <h3 className="text-2xl md:text-3xl font-display font-bold">
                 Expert en <span className="text-primary">Développement</span> Web & Mobile
               </h3>

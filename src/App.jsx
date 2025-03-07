@@ -8,7 +8,9 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Testimonials from './components/Testimonials';
-import Services from './components/Services';
+import Services from './components/Competence';
+import WhyMe from './components/WhyMe';
+import ServiceSection from './components/ServiceSection';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -27,7 +29,10 @@ function App() {
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} isScrolled={isScrolled} />
       <main>
         <Hero />
+        
         <About />
+        <WhyMe />
+        <ServiceSection />
         <Skills />
         <Services />
         <Projects />

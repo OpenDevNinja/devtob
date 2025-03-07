@@ -70,21 +70,18 @@ const About = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image sans rotation et avec hauteur ajustée */}
-          <div className={`relative h-full flex items-center order-2 lg:order-1 ${isVisible ? 'animate-slide-in-left' : 'opacity-0 -translate-x-12'}`}
+          {/* Image sans effet de hover */}
+          <div className={`relative order-2 lg:order-1 ${isVisible ? 'animate-slide-in-left' : 'opacity-0 -translate-x-12'}`}
                style={{ transition: 'all 0.8s ease-out' }}>
             <div className="absolute -top-8 -left-8 w-72 h-72 rounded-full bg-primary opacity-10 filter blur-3xl animate-pulse"></div>
-            
-            {/* Image container - suppression des effets de rotation */}
-            <div className="group relative w-full h-full overflow-hidden rounded-2xl border-4 border-primary/20 shadow-lg shadow-primary/5">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-md max-h-md border-2 border-primary/30 rounded-2xl transform rotate-6 scale-90"></div>
+            <div className="relative overflow-hidden rounded-2xl border-4 border-primary/20 shadow-lg shadow-primary/5 transform perspective-1000 rotate-3">
               <img 
                 src={bona} 
                 alt="Bonaventure TOYI, Développeur Web & Mobile" 
-                className="w-full h-full object-cover object-center filter saturate-50 hover:saturate-100 transition-all duration-700"
+                className="w-full h-auto filter saturate-50"
               />
             </div>
-            
             <div className="absolute -bottom-8 -right-8 w-72 h-72 rounded-full bg-secondary opacity-10 filter blur-3xl animate-pulse"></div>
           </div>
           
