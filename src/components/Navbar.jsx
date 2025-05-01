@@ -9,14 +9,15 @@ const Navbar = ({ darkMode, setDarkMode, isScrolled }) => {
     setDarkMode(!darkMode);
   };
 
-  const navItems = [
-    { name: 'Accueil', href: '#home' },
-    { name: 'À propos', href: '#about' },
-    { name: 'Compétences', href: '#skills' },
-    { name: 'Projets', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
-  ];
-
+  // Dans votre Navbar component
+const navItems = [
+  { name: 'Accueil', href: '/#home' }, // Notez le / devant pour revenir à la racine
+  { name: 'À propos', href: '/#about' }, // Sur la page d'accueil
+  { name: 'Compétences', href: '/#skills' }, // Sur la page d'accueil
+  { name: 'Mes Parcours', href: '/parcours' }, // Page parcours
+  { name: 'Projets', href: '/#projects' }, // Sur la page d'accueil
+  { name: 'Contact', href: '/#contact' }, // Sur la page d'accueil
+];
   const contactInfo = {
     name: "Bonavneture TOYI ",
     title: "Développeur Web & Mobile - Webmaster Freelance - Expérimenté",
@@ -188,7 +189,7 @@ const Navbar = ({ darkMode, setDarkMode, isScrolled }) => {
                   </div>
                 </div>
                 
-                <div className="mt-8">
+                {/* <div className="mt-8">
                   <h4 className="text-sm font-semibold text-dark mb-4">Visiter</h4>
                   <div className="space-y-4">
                     {contactInfo.links.map((link, index) => (
@@ -208,7 +209,10 @@ const Navbar = ({ darkMode, setDarkMode, isScrolled }) => {
                       </div>
                     ))}
                   </div>
-                </div>
+                </div> */}
+
+
+                
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ import bona from "../assets/cap.png";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
@@ -12,13 +12,13 @@ const About = () => {
         observer.disconnect();
       }
     }, { threshold: 0.2 });
-    
+
     const section = document.getElementById('about');
     if (section) observer.observe(section);
-    
+
     return () => observer.disconnect();
   }, []);
-  
+
   const stats = [
     { id: 1, value: '7+', label: 'Années d\'expérience', icon: CodeIcon, delay: 100 },
     { id: 2, value: '50+', label: 'Projets réalisés', icon: ZapIcon, delay: 200 },
@@ -38,7 +38,7 @@ const About = () => {
       {/* Particules de fond animées */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
         {Array.from({ length: 8 }).map((_, i) => (
-          <div 
+          <div
             key={i}
             className="absolute rounded-full bg-primary/30"
             style={{
@@ -72,38 +72,38 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image sans rotation et avec hauteur ajustée */}
           <div className={`relative h-full flex items-center order-2 lg:order-1 ${isVisible ? 'animate-slide-in-left' : 'opacity-0 -translate-x-12'}`}
-               style={{ transition: 'all 0.8s ease-out' }}>
+            style={{ transition: 'all 0.8s ease-out' }}>
             <div className="absolute -top-8 -left-8 w-72 h-72 rounded-full bg-primary opacity-10 filter blur-3xl animate-pulse"></div>
-            
+
             {/* Image container - suppression des effets de rotation */}
             <div className="group relative w-full h-full overflow-hidden rounded-2xl border-4 border-primary/20 shadow-lg shadow-primary/5">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700"></div>
-              <img 
-                src={bona} 
-                alt="Bonaventure TOYI, Développeur Web & Mobile" 
+              <img
+                src={bona}
+                alt="Bonaventure TOYI, Développeur Web & Mobile"
                 className="w-full h-full object-cover object-center filter saturate-50 hover:saturate-100 transition-all duration-700"
               />
             </div>
-            
+
             <div className="absolute -bottom-8 -right-8 w-72 h-72 rounded-full bg-secondary opacity-10 filter blur-3xl animate-pulse"></div>
           </div>
-          
+
           {/* Contenu textuel */}
           <div className={`order-1 lg:order-2 ${isVisible ? 'animate-slide-in-right' : 'opacity-0 translate-x-12'}`}
-               style={{ transition: 'all 0.8s ease-out', transitionDelay: '0.2s' }}>
+            style={{ transition: 'all 0.8s ease-out', transitionDelay: '0.2s' }}>
             <div className="space-y-6">
               <h3 className="text-2xl md:text-3xl font-display font-bold">
                 Expert en <span className="text-primary">Développement</span> Web & Mobile
               </h3>
-              
+
               <p className="text-light/80 leading-relaxed text-lg">
                 Depuis plus de <span className="font-semibold text-primary">7 ans</span>, je conçois et développe des solutions digitales qui transforment les idées en expériences exceptionnelles. Mon expertise technique combinée à une vision stratégique me permet de créer des applications qui non seulement fonctionnent parfaitement, mais qui dépassent vos attentes.
               </p>
-              
+
               <div className="space-y-2 pl-4 border-l-2 border-primary/30">
                 {expertise.map((item, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="flex items-center space-x-2 text-light/90 font-medium"
                     style={{ animationDelay: `${index * 100 + 400}ms` }}
                   >
@@ -112,16 +112,16 @@ const About = () => {
                   </div>
                 ))}
               </div>
-              
+
               <div className="grid grid-cols-2 gap-6 mt-10">
                 {stats.map((stat) => (
-                  <div 
-                    key={stat.id} 
+                  <div
+                    key={stat.id}
                     className="flex items-center space-x-3 group"
-                    style={{ 
-                      opacity: isVisible ? 1 : 0, 
+                    style={{
+                      opacity: isVisible ? 1 : 0,
                       transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                      transition: `all 0.5s ease-out ${stat.delay}ms` 
+                      transition: `all 0.5s ease-out ${stat.delay}ms`
                     }}
                   >
                     <div className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 text-primary shadow-inner group-hover:from-primary/30 group-hover:to-primary/10 transition-all duration-300">
@@ -134,18 +134,18 @@ const About = () => {
                   </div>
                 ))}
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 mt-10">
-                <a 
-                  href="#" 
-                  download 
+                <a
+                  href="/CV_TOYI.pdf"
+                  download="Bonaventure-TOYI-CV.pdf"  
                   className="px-6 py-3 rounded-lg bg-primary text-white font-medium hover:bg-primary/90 transition-all duration-300 flex items-center justify-center shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transform hover:-translate-y-1 group"
                 >
                   <DownloadIcon className="h-5 w-5 mr-2 group-hover:animate-bounce" />
                   Télécharger mon CV
                 </a>
-                <a 
-                  href="#skills" 
+                <a
+                  href="#skills"
                   className="px-6 py-3 rounded-lg bg-transparent border border-light/20 text-light font-medium hover:bg-light/5 hover:border-primary/40 transition-all duration-300 flex items-center justify-center backdrop-blur-sm"
                 >
                   Découvrir mes compétences

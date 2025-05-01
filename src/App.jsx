@@ -1,16 +1,27 @@
 // src/App.jsx
 import { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import Testimonials from './components/Testimonials';
-import Services from './components/Competence';
-import WhyMe from './components/WhyMe';
-import ServiceSection from './components/ServiceSection';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './components/Home';
+import ExperienceTimeline from './components/ExperienceTimeline';
+
+// Ajoutez ce composant pour gérer le scroll vers les ancres
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -25,22 +36,24 @@ function App() {
   }, []);
 
   return (
-    <div className={`${darkMode ? 'bg-dark text-light' : 'bg-light text-dark'} min-h-screen transition-colors duration-300`}>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} isScrolled={isScrolled} />
-      <main>
-        <Hero />
-        
-        <About />
-        <WhyMe />
-        <ServiceSection />
-        <Skills />
-        <Services />
-        <Projects />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <ScrollToTop /> {/* Ajoutez ce composant ici */}
+      <Routes>
+        <Route 
+          path="/" 
+          element={
+            <Layout 
+              darkMode={darkMode} 
+              setDarkMode={setDarkMode} 
+              isScrolled={isScrolled} 
+            />
+          }
+        >
+          <Route index element={<Home />} />
+          <Route path="/parcours" element={<ExperienceTimeline />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
