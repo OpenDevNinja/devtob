@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home';
-import ExperienceTimeline from './components/ExperienceTimeline';
+import ExperienceTimeline from './pages/ExperienceTimeline';
 
 // Ajoutez ce composant pour gérer le scroll vers les ancres
 function ScrollToTop() {

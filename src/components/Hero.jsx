@@ -80,8 +80,8 @@ const Hero = () => {
             <span className="text-light">Hello, je suis </span>
             <span className="bg-gradient-tech text-transparent bg-clip-text relative">
               TOYI Bonaventure
-              <span className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-tech opacity-30 rounded-full"></span>
-            </span>
+            {/*   <span className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-tech opacity-30 rounded-full"></span>
+            */} </span>
           </h1>
           
           <h2 className="text-xl md:text-2xl lg:text-3xl font-mono mb-10 h-10 md:h-12">
